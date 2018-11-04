@@ -30,6 +30,49 @@ def main():
         
     print('\n')
 
+    while True:
+                    print("Use these short codes : cc - create new credential, dc - display credentias, fc -find a credentia, ex -exit the credentials list ")
+
+                    short_code = input().lower()
+
+                    if short_code == 'cc':
+                            print("New Contact")
+                            print("-"*10)
+
+                            print ("First name ....")
+                            firstname = input()
+
+                            print("Last name ...")
+                            lastname = input()
+
+                            print("Phone number ...")
+                            phone_number = input()
+
+                            print("Email address ...")
+                            email = input()
+
+                            print("password...")
+                            password = input()
+
+                            save_credentials(create_credentials(firstname,lastname,phone_number,email,password))
+                            print ('\n')
+                            print(f"New Contact {firstname} {lastname} created")
+                            print ('\n')
+                    elif short_code == 'dc':
+
+                            if display_credentials():
+                                    print("Here is a list of all your contacts")
+                                    print('\n')
+
+                                    for password in display_credentials():
+                                            print(f"{firstname} {password.lastname} .....{password.phone_number}")
+                                    print('\n')
+                            else:
+                                    print('\n')
+                                    print("You dont seem to have any contacts saved yet")
+                                    print('\n')
+
+
 if __name__ == '__main__':
     main()
 
