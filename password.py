@@ -18,10 +18,17 @@ class Credentials:
 
     #     Credentials.credentials_list.remove(self)
 
-    @classmethod
-    def find_by_email(cls,email):
-        for password in cls.credentials_list:
-            if password.email == email:
-                return password
+    # @classmethod
+    # def find_by_email(cls,email):
+    #     for password in cls.credentials_list:
+    #         if password.email == email:
+    #             return password
 
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.credentials_list
+        
     
