@@ -10,3 +10,6 @@ class Credentials:
         self.password = password
 
         # print(firstname)
+    def save_credentials(self):
+
+        Credentials.credentials_list.append(self)
