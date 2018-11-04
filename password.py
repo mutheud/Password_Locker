@@ -8,3 +8,5 @@ class Credentials:
         self.phone_number = phone_number
         self.email = email
         self.password = password
+
+        # print(firstname)
