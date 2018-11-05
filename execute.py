@@ -11,7 +11,7 @@ def save_credentials(password):
 def delete_credentials(password):
     password.delete_credentials()
 
-def find_by_email(password):
+def find_credentials(password):
     return Credentials.find_by_email(email)
 
 def credential_exist(phone_number):
@@ -71,6 +71,22 @@ def main():
                                     print('\n')
                                     print("You dont seem to have any contacts saved yet")
                                     print('\n')
+
+                    elif short_code == 'fc':
+
+                            print("Enter the number you want to search for")
+
+                            search_phone_number = input()
+                            if credential_exist(search_phone_number):
+                                    search_credentials = find_credentials(search_password)
+                                    print(f"{search_credentials.first_name} {search_credentials.last_name}")
+                                    print('-' * 20)
+
+                                    print(f"Phone number.......{search_credentials.phone_number}")
+                                    print(f"Email address.......{search_credentials.email}")
+                            else:
+                                    print("That contact does not exist")
+
 
 
 if __name__ == '__main__':
