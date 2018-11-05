@@ -11,12 +11,12 @@ def save_credentials(password):
 def delete_credentials(password):
     password.delete_credentials()
 
-def find_credentials(password):
+def find_credentials(phone_number):
     return Credentials.find_by_email(email)
 
-def credential_exist(phone_number):
+def credentials_exist(phone_number):
 
-    return Credentials.credential_exist(phone_number)
+    return Credentials.credentials_exist(phone_number)
 
 def display_credentials():
     
@@ -77,20 +77,20 @@ def main():
                             print("Enter the number you want to search for")
 
                             search_phone_number = input()
-                            if credential_exist(search_phone_number):
-                                    search_credentials = find_credentials(search_password)
+                            if credentials_exist(search_phone_number):
+                                    search_credentials = find_credentials(search_phone_number)
                                     print(f"{search_credentials.first_name} {search_credentials.last_name}")
                                     print('-' * 20)
 
                                     print(f"Phone number.......{search_credentials.phone_number}")
-                                    print(f"Email address.......{search_credentials.email}")
+                                #     print(f"Password.......{search_credentials.password}")
                             else:
                                     print("That contact does not exist")
 
-                        elif short_code == "ex":
-                            print("Bye .......")
-                            break
-                        else:
+                    elif short_code == "ex":
+                                    print("Bye .......")
+                                    break
+                    else:
                             print("I really didn't get that. Please use the short codes")
 
 
