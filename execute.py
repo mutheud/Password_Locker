@@ -26,6 +26,8 @@ def main():
     print("Hello Welcome to your contact list. What is your name?")
     user_name = input()
 
+
+
     print(f"Hello {user_name}. what would you like to do?")
         
     print('\n')
@@ -87,10 +89,10 @@ def main():
                             else:
                                     print("That contact does not exist")
 
-                        elif short_code == "ex":
+                    elif short_code == "ex":
                             print("Bye .......")
                             break
-                        else:
+                    else:
                             print("I really didn't get that. Please use the short codes")
 
 
