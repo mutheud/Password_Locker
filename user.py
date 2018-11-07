@@ -9,7 +9,8 @@ class User:
         self.email = email
         self.password = password
 
-    def save_account(self):
+    @classmethod
+    def save_account(self,password):
         User.user_list.append(self)
 
     def delete_account(self):

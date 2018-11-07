@@ -1,8 +1,10 @@
 #!/usr/bin/env python3.6
+from user import User
 from password import Credentials
 
-def create_credentials(firstname,lastname,phone_number,email,password):
-    new_credentials = Credentials(firstname,lastname,phone_number,email,password)
+
+def create_credentials(accountname,firstname,lastname,phone_number,email,password):
+    new_credentials = Credentials(accountname,firstname,lastname,phone_number,email,password)
     return new_credentials
 
 def save_credentials(password):
@@ -29,7 +31,7 @@ def main():
 
 
     print(f"Hello {user_name}. what would you like to do?")
-        
+
     print('\n')
 
     while True:
@@ -40,6 +42,9 @@ def main():
                     if short_code == 'cc':
                             print("New Contact")
                             print("-"*10)
+
+                            print ("Account name ....")
+                            accountname = input()
 
                             print ("First name ....")
                             firstname = input()
@@ -56,7 +61,7 @@ def main():
                             print("password...")
                             password = input()
 
-                            save_credentials(create_credentials(firstname,lastname,phone_number,email,password))
+                            save_credentials(create_credentials(accountname,firstname,lastname,phone_number,email,password))
                             print ('\n')
                             print(f"New Contact {firstname} {lastname} created")
                             print ('\n')
